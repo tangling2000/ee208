@@ -1,0 +1,15 @@
+*.seg
+/lab2-Crwaler/codes/html
+/lab2-Crwaler/codes/parts/partD/html
+/lab4-Lucene/codes/html
+/lab4-Lucene/codes/index
+/lab4-Lucene/codes/index_15000
+/lab5-Lucene2/codes/html
+/lab5-Lucene2/codes/index
+/lab5-Lucene2/codes/photo_index
+/lab6-Flask/codes/index
+/lab6-Flask/codes/source
+/lab7-中期整合/codes/source
+/lab7-中期整合/codes/index_doc
+/lab7-中期整合/codes/index_img
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style type = "text/css">
+        div[class="item"]{
+            height:120px;
+            widows: 100%;
+            background-color:rgb(171, 230, 226);
+            margin-top: 20px;
+            word-wrap: break-word;
+        }
+        div[class="top"]{
+            height: 100px;
+            line-height: 100px;
+            width: 100%;
+            font-size: 40px;
+            border: 3px solid rgb(177, 173, 215);
+            text-align: center;
+            background-color: rgb(245, 243, 178);
+        }
+    </style>
+</head>
+<body>
+    <h1>Search</h1>
+    <a href="/" >网页</a>
+    <a href="/im" >图片</a><br>
+    <form action="result">
+        <label>Keyword</label>
+        <input type="name" name="keyword">
+        <input type="submit" name="" value="Search">
+    </form>
+    <div class="top">We've found {{results|length}} results about "{{keyword}}" here!</div>
+    {% for result in results[:20] %}
+    <div class="item">
+        <div> <b>Title</b> : <a href={{result.url}}><font size='5'>{{result['title']}}</font></a></div>
+        <div> <b>Abstract</b> : {{result.abstract |safe}}</div>
+        <div> <b>Url</b> : <a href={{result.url}}><font color='green',size='2'>{{result['url']}}</font></a></div>
+    </div>
+    {% endfor %}
+</body>
+</html> 

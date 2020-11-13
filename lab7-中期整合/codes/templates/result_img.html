@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style type="text/css">
+        div[class="item"]{
+            height: 200px;
+            width:20%;
+            margin-left: 4%;
+            margin-top: 20px;
+            background-color: rgb(169, 239, 240);
+            word-wrap: break-word;
+            float: left;
+        }
+        div[class="line"]{
+            height:200px;
+            width: 100%;
+            margin-top: 20px;
+            word-wrap: break-word;
+        }
+        div[class="top"]{
+            height: 100px;
+            line-height: 100px;
+            width: 100%;
+            font-size: 40px;
+            border: 3px solid rgb(135, 135, 135);
+            text-align: center;
+            background-color: rgb(255, 241, 183);
+        }
+        img[class="content"]{
+            width: auto;
+            height:auto;
+            max-width: 75%;
+            max-height: 75%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search</h1>
+    <a href="/" >网页</a>
+    <a href="/im" >图片</a><br>
+    <form action="result">
+        <label>Keyword</label>
+        <input type="name" name="keyword">
+        <input type="submit" name="" value="Search">
+    </form>
+    <div class="top">We've found {{results|length}} results about "{{keyword}}" here!</div>
+    <div class="line">
+        {% for result in results[:20] %}
+            <div class="item" nowrap>
+                <img class="content" src="{{result.src}}" referrerPolicy="no-referrer"><br>
+                <a href="{{result.source}}"><i><font size='3'>{{result.title}}</font></i></a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
